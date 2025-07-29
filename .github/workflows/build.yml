@@ -22,8 +22,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install flet PyInstaller requests supabase
 
+      - name: Add Scripts to PATH
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+
       - name: Build APK with Flet
-        run: python -m flet pack dashboard_flet.py --platform android
+        run: flet pack dashboard_flet.py android
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
