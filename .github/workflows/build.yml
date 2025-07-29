@@ -26,7 +26,7 @@ jobs:
         run: echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Build APK with Flet
-        run: flet pack dashboard_flet.py android
+        run: python -m flet pack dashboard_flet.py android
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
