@@ -22,8 +22,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install flet PyInstaller requests supabase
 
-     - name: Build APK with Flet
-  run: python -m flet pack dashboard_flet.py --platform android
+      - name: Build APK with Flet
+        run: python -m flet pack dashboard_flet.py --platform android
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
